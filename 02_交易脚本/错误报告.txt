@@ -1,0 +1,170 @@
+交易发布错误报告 - 2026-07-28 15:21:57
+============================================================
+
+【错误 1】
+时间: 2026-07-28T15:20:59.505454
+步骤: 步骤 9
+错误类型: TimeoutError
+错误信息: Locator.wait_for: Timeout 5000ms exceeded.
+Call log:
+  - waiting for locator("input[type=\"text\"]") to be visible
+
+堆栈跟踪:
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\cs\测试文档\脚本\交易脚本\交易发布_优化版.py", line 502, in main_test_flow
+    await safe_fill(page, page.locator("input[type=\"text\"]"), CONFIG["title"], "账号ID")
+  File "C:\Users\Administrator\Desktop\cs\测试文档\脚本\交易脚本\交易发布_优化版.py", line 135, in safe_fill
+    await selector.wait_for(state="visible", timeout=5000)
+  File "C:\Users\Administrator\Desktop\cs\测试文档\脚本\.venv\Lib\site-packages\playwright\async_api\_generated.py", line 20268, in wait_for
+    await self._impl_obj.wait_for(timeout=to_milliseconds(timeout), state=state)
+  File "C:\Users\Administrator\Desktop\cs\测试文档\脚本\.venv\Lib\site-packages\playwright\_impl\_locator.py", line 741, in wait_for
+    await self._frame.wait_for_selector(
+        self._selector, strict=True, timeout=timeout, state=state
+    )
+  File "C:\Users\Administrator\Desktop\cs\测试文档\脚本\.venv\Lib\site-packages\playwright\_impl\_frame.py", line 394, in wait_for_selector
+    await self._channel.send(
+        "waitForSelector", self._timeout, locals_to_params(locals())
+    )
+  File "C:\Users\Administrator\Desktop\cs\测试文档\脚本\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\Administrator\Desktop\cs\测试文档\脚本\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 563, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Locator.wait_for: Timeout 5000ms exceeded.
+Call log:
+  - waiting for locator("input[type=\"text\"]") to be visible
+
+
+------------------------------------------------------------
+
+【错误 2】
+时间: 2026-07-28T15:20:59.506865
+步骤: 第1次尝试
+错误类型: TimeoutError
+错误信息: Locator.wait_for: Timeout 5000ms exceeded.
+Call log:
+  - waiting for locator("input[type=\"text\"]") to be visible
+
+截图: error_screenshot_trade_1.png
+堆栈跟踪:
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\cs\测试文档\脚本\交易脚本\交易发布_优化版.py", line 303, in run_with_retry
+    result = await main_test_flow(page)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\cs\测试文档\脚本\交易脚本\交易发布_优化版.py", line 502, in main_test_flow
+    await safe_fill(page, page.locator("input[type=\"text\"]"), CONFIG["title"], "账号ID")
+  File "C:\Users\Administrator\Desktop\cs\测试文档\脚本\交易脚本\交易发布_优化版.py", line 135, in safe_fill
+    await selector.wait_for(state="visible", timeout=5000)
+  File "C:\Users\Administrator\Desktop\cs\测试文档\脚本\.venv\Lib\site-packages\playwright\async_api\_generated.py", line 20268, in wait_for
+    await self._impl_obj.wait_for(timeout=to_milliseconds(timeout), state=state)
+  File "C:\Users\Administrator\Desktop\cs\测试文档\脚本\.venv\Lib\site-packages\playwright\_impl\_locator.py", line 741, in wait_for
+    await self._frame.wait_for_selector(
+        self._selector, strict=True, timeout=timeout, state=state
+    )
+  File "C:\Users\Administrator\Desktop\cs\测试文档\脚本\.venv\Lib\site-packages\playwright\_impl\_frame.py", line 394, in wait_for_selector
+    await self._channel.send(
+        "waitForSelector", self._timeout, locals_to_params(locals())
+    )
+  File "C:\Users\Administrator\Desktop\cs\测试文档\脚本\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\Administrator\Desktop\cs\测试文档\脚本\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 563, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Locator.wait_for: Timeout 5000ms exceeded.
+Call log:
+  - waiting for locator("input[type=\"text\"]") to be visible
+
+
+------------------------------------------------------------
+
+【错误 3】
+时间: 2026-07-28T15:21:47.355453
+步骤: 步骤 5
+错误类型: TargetClosedError
+错误信息: Page.wait_for_timeout: Target page, context or browser has been closed
+堆栈跟踪:
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\cs\测试文档\脚本\交易脚本\交易发布_优化版.py", line 443, in main_test_flow
+    await page.wait_for_timeout(1000)
+  File "C:\Users\Administrator\Desktop\cs\测试文档\脚本\.venv\Lib\site-packages\playwright\async_api\_generated.py", line 12454, in wait_for_timeout
+    await self._impl_obj.wait_for_timeout(timeout=to_milliseconds(timeout))
+  File "C:\Users\Administrator\Desktop\cs\测试文档\脚本\.venv\Lib\site-packages\playwright\_impl\_page.py", line 1135, in wait_for_timeout
+    await self._main_frame.wait_for_timeout(timeout)
+  File "C:\Users\Administrator\Desktop\cs\测试文档\脚本\.venv\Lib\site-packages\playwright\_impl\_frame.py", line 916, in wait_for_timeout
+    await self._channel.send("waitForTimeout", None, {"waitTimeout": timeout})
+  File "C:\Users\Administrator\Desktop\cs\测试文档\脚本\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\Administrator\Desktop\cs\测试文档\脚本\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 563, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.wait_for_timeout: Target page, context or browser has been closed
+
+------------------------------------------------------------
+
+【错误 4】
+时间: 2026-07-28T15:21:47.356167
+步骤: 第2次尝试
+错误类型: TargetClosedError
+错误信息: Page.wait_for_timeout: Target page, context or browser has been closed
+堆栈跟踪:
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\cs\测试文档\脚本\交易脚本\交易发布_优化版.py", line 303, in run_with_retry
+    result = await main_test_flow(page)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\cs\测试文档\脚本\交易脚本\交易发布_优化版.py", line 443, in main_test_flow
+    await page.wait_for_timeout(1000)
+  File "C:\Users\Administrator\Desktop\cs\测试文档\脚本\.venv\Lib\site-packages\playwright\async_api\_generated.py", line 12454, in wait_for_timeout
+    await self._impl_obj.wait_for_timeout(timeout=to_milliseconds(timeout))
+  File "C:\Users\Administrator\Desktop\cs\测试文档\脚本\.venv\Lib\site-packages\playwright\_impl\_page.py", line 1135, in wait_for_timeout
+    await self._main_frame.wait_for_timeout(timeout)
+  File "C:\Users\Administrator\Desktop\cs\测试文档\脚本\.venv\Lib\site-packages\playwright\_impl\_frame.py", line 916, in wait_for_timeout
+    await self._channel.send("waitForTimeout", None, {"waitTimeout": timeout})
+  File "C:\Users\Administrator\Desktop\cs\测试文档\脚本\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\Administrator\Desktop\cs\测试文档\脚本\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 563, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.wait_for_timeout: Target page, context or browser has been closed
+
+------------------------------------------------------------
+
+【错误 5】
+时间: 2026-07-28T15:21:57.602209
+步骤: 第3次尝试
+错误类型: Exception
+错误信息: BrowserType.launch: Connection closed while reading from the driver
+堆栈跟踪:
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\cs\测试文档\脚本\交易脚本\交易发布_优化版.py", line 292, in run_with_retry
+  File "C:\Users\Administrator\Desktop\cs\测试文档\脚本\.venv\Lib\site-packages\playwright\async_api\_generated.py", line 16546, in launch
+    await self._impl_obj.launch(
+    ...<17 lines>...
+    )
+  File "C:\Users\Administrator\Desktop\cs\测试文档\脚本\.venv\Lib\site-packages\playwright\_impl\_browser_type.py", line 97, in launch
+    await self._channel.send(
+        "launch", TimeoutSettings.launch_timeout, params
+    )
+  File "C:\Users\Administrator\Desktop\cs\测试文档\脚本\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\Administrator\Desktop\cs\测试文档\脚本\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 563, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+Exception: BrowserType.launch: Connection closed while reading from the driver
+
+------------------------------------------------------------
+
